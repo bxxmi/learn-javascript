@@ -1,6 +1,6 @@
 'use strict'
 
-// 2. Variable
+// 2. Variable, rw(read/write)
 // let (added in ES6)
 // 전역 변수는 애플리케이션 실행 직후부터 끝날 때까지 메모리에 탑재 => 최소한으로 사용할 것
 // class, function, if, for loop 과 같이 필요한 부분에만 사용
@@ -20,16 +20,18 @@ console.log(globalName);
 // 📌 var hoisting: 어디에 선언했는지 상관없이 항상 제일 위로 선언을 끌어올려주는 것
 // ex) 맨 아래 age 변수 선언 후 맨 위에서 해당 변수 호출 시 값 출력
 
-// 3. Constants
+// 3. Constant, read only 
+// 📌 실무에서 const 키워드를 통해 변수를 선언함
 // 선언과 동시에 값 할당 후 절대 값을 변경할 수 없는 변수
 // for 보안성 향상, 변수에 대한 여러 스레드의 동시 작업 막기, 코드 변경 시 실수 방지
 const daysInWeek = 7;
 const maxNumber = 5;
 
 // 📌 4. Variable types
-// primitive types: 더 이상 작은 단위로 나눠질 수 없는 한 가지의 아이템
+// primitive types: 더 이상 작은 단위로 나눠질 수 없는 한 가지의 아이템으로 값 자체가 메모리에 적재됨
 // ex) number, string, boolean, null, undefined, symbol
-// object types: 여러 primitive types를 하나로 묶어서 관리
+
+// object types: 여러 primitive types를 하나로 묶어서 관리되며 오브젝트를 가리키는 레퍼런스가 메모리에 적재됨
 // function(=first-class function): 함수가 변수에 할당 및 인자로 전달되거나 리턴값으로 사용 가능
 
 // 4-1. Number
@@ -90,4 +92,3 @@ let text = 'hello';
 console.log(`value: ${text}, type: ${typeof text}`); // type: string
 text = 1;
 console.log(`value: ${text}, type: ${typeof text}`); // type: number
-
