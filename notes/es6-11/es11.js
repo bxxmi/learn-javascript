@@ -71,3 +71,15 @@ console.log(userName); // 결과: 입력한 그대로 빈 값 출력
 const num = 0;
 const message = num ?? 'undefined';
 console.log(message); // 결과: 입력한 그대로 0 출력
+
+// 함수를 실행한 결과값을 활용하기도 함
+const result = getInstanceState() ?? fetchFromServer();
+console.log(reuslt);
+
+function getInstanceState() {
+  return null;
+}
+
+function fetchFromServer() {
+  return '🐶';
+}
