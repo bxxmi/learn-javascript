@@ -78,6 +78,7 @@ const dog2 = { dog: '🐕' };
 const dog = { ...dog1, ...dog2 };
 
 // 4. Default parameters
+// 📌 오직 undefined 값이 출력되는 경우에만 default parameter 값이 출력 (null X)
 // e.g. 👎🏻
 function printMessage(messgae) {
   if (message == null) {
