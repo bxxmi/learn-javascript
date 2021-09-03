@@ -6,88 +6,100 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
-}
 
-* {
-  box-sizing: border-box;
-}
+  /* size */
+  --size-button: 60px;
+  --font-size: 18px;
+  --base-space: 8px;
+  --size-border: 4px;
+  --size-thumbnail: 50px;
 
-ul {
-  padding-inline-start: 0;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-img {
-  display: block;
-  width: 40px;
-  height: 40px;
+  /* animation */
+  --animation-duration: 300ms;
 }
 
 body {
+  height: 100vh;
   background-color: var(--color-black);
-  padding: 0;
-  margin: 0;
-}
-
-.container {
-  width: 500px;
-  margin: 0 auto;
-}
-
-.logo {
-  width:min-content;
-  height: min-content;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-header > ul {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-header > ul > li {
-  padding: 10px;
+.logo {
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
 }
 
-header > ul > li:nth-child(4) {
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
+  margin-right: var(--base-space);
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--font-size);
+  padding: calc(var(--base-space) * 2);
+  border-radius: var(--size-border);
+}
+
+.blue {
   background-color: var(--color-blue);
 }
 
-header > ul > li:nth-child(5) {
+.yellow {
   background-color: var(--color-yellow);
 }
 
-header > ul > li:nth-child(6) {
+.pink {
   background-color: var(--color-pink);
 }
 
-header > ul > li + li {
-  margin-left: 12px;
+.items {
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0;
+  overflow-y: auto;
 }
 
-section > ul {
-  padding: 40px;
-}
-
-section > ul > li {
+.item {
   background-color: var(--color-white);
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
 }
 
-section > ul > li:last-child {
-  margin-bottom: 0;
+.item__thumbnail {
+  width: var(--size-thumbnail);
+  height: var(--size-thumbnail);
 }
 
-
+.item__description {
+  margin-left: var(--base-space);
+  font-size: var(--font-size);
+}
